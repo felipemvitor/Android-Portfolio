@@ -32,7 +32,7 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             btnStart.id -> {
-                findNavController().navigate(R.id.portfolioListFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_portfolioListFragment)
             }
         }
     }
