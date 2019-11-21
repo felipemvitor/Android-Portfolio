@@ -1,7 +1,8 @@
-package com.felipe.androidportfolio
+package com.felipe.androidportfolio.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.felipe.androidportfolio.R
 
 class MainActivity : AppCompatActivity() {
 
