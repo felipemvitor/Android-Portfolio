@@ -9,11 +9,13 @@ import android.widget.ExpandableListAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.felipe.androidportfolio.R
+import com.felipe.androidportfolio.listener.OnListItemClickListener
 import com.felipe.androidportfolio.model.Portfolio
 import com.felipe.androidportfolio.model.PortfolioItem
 import com.felipe.androidportfolio.model.data.PortfolioData
 
-class PortfolioListAdapter(var context: Context) : ExpandableListAdapter {
+class PortfolioListAdapter(var context: Context, var listener: OnListItemClickListener? = null) :
+    ExpandableListAdapter {
 
     private var portfolioList = PortfolioData.getFullPortfolio()
 
@@ -70,6 +72,10 @@ class PortfolioListAdapter(var context: Context) : ExpandableListAdapter {
 
         var view = convertView
         view = LayoutInflater.from(context).inflate(R.layout.item_portfolio, null, false)
+
+        view.setOnClickListener {
+            listener?.onItemClick(child.action)
+        }
 
         val itemText = view.findViewById<TextView>(R.id.itemText)
         itemText.text = child.name

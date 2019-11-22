@@ -27,5 +27,18 @@
         android:id="@+id/portfolioListFragment"
         android:name="com.felipe.androidportfolio.fragment.PortfolioListFragment"
         android:label="fragment_portfolio_list"
-        tools:layout="@layout/fragment_portfolio_list" />
+        tools:layout="@layout/fragment_portfolio_list" >
+        <action
+            android:id="@+id/action_portfolioListFragment_to_oneItemListFragment"
+            app:destination="@id/oneItemListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneItemListFragment"
+        android:name="com.felipe.androidportfolio.fragment.OneItemListFragment"
+        android:label="fragment_one_item_list"
+        tools:layout="@layout/fragment_one_item_list" />
 </navigation>

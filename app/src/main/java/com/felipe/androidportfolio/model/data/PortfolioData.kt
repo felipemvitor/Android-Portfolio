@@ -18,11 +18,7 @@ object PortfolioData {
 
     private fun getListItems(): ArrayList<PortfolioItem> {
         return arrayListOf(
-            PortfolioItem("Single Line Item"),
-            PortfolioItem("Two Line Item"),
-            PortfolioItem("Three Line Item"),
-                    PortfolioItem("Four Line Item")
+            PortfolioItem("Single Line Item", R.id.action_portfolioListFragment_to_oneItemListFragment)
         )
     }
-
 }

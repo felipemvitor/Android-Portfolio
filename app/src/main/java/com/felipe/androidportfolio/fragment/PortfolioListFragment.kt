@@ -6,15 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
 import com.felipe.androidportfolio.R
 import com.felipe.androidportfolio.adapter.PortfolioListAdapter
+import com.felipe.androidportfolio.listener.OnListItemClickListener
 import kotlinx.android.synthetic.main.fragment_portfolio_list.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class PortfolioListFragment : Fragment() {
+class PortfolioListFragment : Fragment(), OnListItemClickListener {
 
     private lateinit var mAdapter: PortfolioListAdapter
 
@@ -29,9 +31,12 @@ class PortfolioListFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        mAdapter = PortfolioListAdapter(context!!)
+        mAdapter = PortfolioListAdapter(context!!, this)
         elvPortfolio.setAdapter(mAdapter)
         elvPortfolio.setGroupIndicator(null)
     }
 
+    override fun onItemClick(action: Int) {
+        findNavController().navigate(action)
+    }
 }
